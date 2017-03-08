@@ -7,13 +7,13 @@ var myApp = angular.module('myApp', [
 	]);
 
 myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider){
-		//$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 		//$httpProvider.interceptors.push('mainInterceptor');
 
 		$urlRouterProvider.when('', '/PageTab');
 
 		$stateProvider
-			.state("mainPage", {
+			.state("MainPage", {
 	            url: "/",
 	            templateUrl: "/js/views/MainPage/MainPage.html"
 	        })
@@ -34,7 +34,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locati
 	            templateUrl: "/js/views/Page3/Page3.html"
 	        });
 
-	    //$locationProvider.html5Mode(true).hashPrefix('!');
+	    $locationProvider.html5Mode(true).hashPrefix('!');
     	//$urlRouterProvider.otherwise('/en');
 	})
 	.run([
