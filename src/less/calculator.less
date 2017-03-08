@@ -1,0 +1,37 @@
+.calBaseInfo {
+	background: #f4f4f4;
+	padding: 20px 10px;
+}
+
+.list-calc {
+	border-left:1px solid #E9E9E9;
+	border-top:1px solid #E9E9E9;
+	li {
+		border-right:1px solid #E9E9E9;
+		border-bottom:1px solid #E9E9E9;		
+	}
+	li:first-child {&:extend(.fw);background-color:#F7F7F7;}
+	.ant-row {display: flex;}
+	.ant-col-2,.ant-col-8,.ant-col-14 {
+		padding: 16px 8px;
+		word-break: break-all;
+	}
+	.ant-col-2,.ant-col-8 {border-right:1px solid #E9E9E9;min-height:32px;line-height:32px;}
+	.ant-col-2 {&:extend(.tc);}
+}
+.inpLabelWrap {&:extend(.dib,.vt);}
+.h32 {height:32px;line-height:32px;}
+.personList {
+	&:extend(.mb10);
+}
+
+.perBefore+.ant-input-wrapper {
+	&:extend(.dib);width: 20%;
+	.ant-input {width:84%}
+	.ant-input-group-addon {&:extend(.tc);padding:0;line-height:32px;height:32px;width:16%;}
+	.ant-input-wrapper,.ant-input-group-addon {&:extend(.dib,.vm);box-sizing: border-box;}
+}
+
+.calculatorModal {
+	padding: 20px 20px 50px 20px;
+}

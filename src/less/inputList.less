@@ -1,0 +1,48 @@
+.caseFormWrap {
+	max-width: 1000px;&:extend(.mau);
+	.ant-steps .ant-steps-head,.ant-steps .ant-steps-title {background:none;}
+}
+.titPname {
+	&:extend(.mb20);
+	a {text-decoration:underline;}
+}
+.stepName {
+	&:extend(.fw,.c3);border-bottom:2px solid #4EA2EB;
+}
+//label[for="debateKeyPointOther"]::after {display:none;}
+
+.itemInpWrap {
+	&:extend(.dib,.vt);width: auto;
+	.ant-row {&:extend(.dib);width:90%;}
+	//.mb20 .ant-col-5 {&:extend(.dib);width: auto;}
+	.mb20 {
+		&:extend(.vt);
+		.ant-col-5 {width:100%;&:extend(.vm);}
+		.ant-input-wrapper {width:90%;
+			.ant-input {width:84%;}
+		}
+		.ant-input-group-addon {&:extend(.tc);padding:0;line-height:32px;height:32px;width:16%;}
+		.ant-input-wrapper,.ant-input-group-addon {&:extend(.dib,.vm);box-sizing: border-box;}
+	}
+}
+.templWrap {
+	margin-top:20px;
+	.ant-form-item-no-colon .ant-form-item-label {&:extend(.tl);}
+}
+.mb20 {margin-bottom:24px;}
+.dynamicWrap .inputsWrap {width:auto;&:extend(.mr5);}
+.inputsWrap {	
+	.ant-input-wrapper {
+		width:auto;
+		.ant-input {&:extend(.vt);width:84%;}
+	}
+	.ant-input-group-addon {&:extend(.tc);padding:0;line-height:32px;height:32px;width:16%;}
+	.ant-input-wrapper,.ant-input-group-addon {&:extend(.dib,.vt);box-sizing: border-box;}
+}
+.addItemFy {
+	.ant-col-8 {&:extend(.fr);}
+}
+
+.inputDataWrap {
+	.ant-steps .ant-steps-tail>i {display:none;}
+}

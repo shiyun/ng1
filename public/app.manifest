@@ -1,0 +1,11 @@
+CACHE MANIFEST
+/css/style.min.css
+/js/libs.min.js
+/js/view.min.js
+/js/main.js
+
+NETWORK:
+b.html
+
+FALLBACK:
+/ /404.html

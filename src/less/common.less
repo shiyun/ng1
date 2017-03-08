@@ -1,0 +1,91 @@
+@url: '../images';
+body {font-size:14px;}
+h1,h2,h3,h4,h5,h6{font-weight:400;font-size:16px;}
+.tc {text-align:center;}
+.fixed {position:fixed;}
+.pa {position:absolute;}
+.pr {position:relative;}
+.clearfix {
+	&::after{
+	    content: '\200B';
+		clear: both;
+		height: 0;
+		visibility: hidden;
+		display: block;
+		line-height: 0
+	}
+}
+.fl {float:left;}
+.fr {float:right;}
+.dib {display:inline-block;}
+.cp {cursor:pointer;}
+.tc {text-align:center;}
+.tl {text-align:left;}
+.tr {text-align:right;}
+.oh {overflow:hidden;}
+.hidden {display:none !important;}
+.mau {margin-left:auto;margin-right:auto;}
+.ml5 {margin-left:5px;}
+.mr5 {margin-right:5px;}
+.mr20 {margin-right:20px;}
+.mb5 {margin-bottom:5px;}
+.ml10 {margin-left:10px;}
+.ml20 {margin-left:20px;}
+.mt10 {margin-top:10px;}
+.mb10 {margin-bottom:10px;}
+.mb20 {margin-bottom:20px;}
+.mb40 {margin-bottom:40px;}
+.mt20 {margin-top:20px;}
+.mt40 {margin-top:40px;}
+.pl10 {padding-left:10px;}
+.pt10 {padding-top:10px;}
+.pt20 {padding-top:20px;}
+.f12 {font-size:12px;}
+.f14 {font-size:14px;}
+.f16 {font-size:16px;}
+.vt {vertical-align: top;}
+.vm {vertical-align: middle;}
+.c3 {color:#333;}
+.c6 {color:#666;}
+.c9 {color:#999;}
+.bgWhite {background-color:#fff;}
+.fw {font-weight:700;}
+.cred {color: red;}
+.cgreen {color: #4FAB60;}
+.cblue {color: #49a9ee;}
+
+html, body, #app {height:100%;}
+body {background-color:#F6F6F6;}
+.container {
+	
+}
+.header {
+	.bgLogin & {&:extend(.fixed);top:0;right:0;left:0;}
+	border-top:4px solid #3E82BC;background-color:rgba(255,255,255,.8);
+}
+.bgHeader {background-color:rgba(0,0,0,.6);}
+.logo {
+	width:124px;margin:10px 16px;
+}
+.loginIconWrap {
+	&:extend(.cp,.c3);margin:25px 20px 0;
+}
+.loginIcon {
+	color:#c7c7c7;
+	&::before {&:extend(.dib,.mr5);}
+}
+.exitLogin {
+	&:extend(.ml10,.pl10);border-left:1px solid #c7c7c7;
+}
+.footer {
+	&:extend(.tc,.fixed);bottom:0;right:0;left:0;background-color:#000;color:#5c7c96;line-height:2;padding:38px 0;z-index:999;
+}
+.caseDetailLink {
+	&:extend(.f12, .pa);
+	top: 30px;
+	right: 10px;
+}
+.stepBar {
+	text-align: center;
+	position: relative;
+}
