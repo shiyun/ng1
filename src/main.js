@@ -10,15 +10,16 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locati
 		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 		//$httpProvider.interceptors.push('mainInterceptor');
 
-		$urlRouterProvider.when('', '/PageTab');
+		$urlRouterProvider.when('', '/ng');
 
 		$stateProvider
 			.state("MainPage", {
-	            url: "/",
-	            templateUrl: "/js/views/MainPage/MainPage.html"
+	            url: "/ng",
+	            templateUrl: "/js/views/MainPage/MainPage.html",
+	            controller: 'MainPageCtrl'
 	        })
 			.state("PageTab", {
-	            url: "/PageTab",
+	            url: "/ng/PageTab",
 	            templateUrl: "/js/views/PageTab/PageTab.html"
 	        })
 	        .state("PageTab.Page1", {
@@ -35,7 +36,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locati
 	        });
 
 	    $locationProvider.html5Mode(true).hashPrefix('!');
-    	//$urlRouterProvider.otherwise('/en');
+    	$urlRouterProvider.otherwise('/ng');
 	})
 	.run([
 		'$rootScope', '$state', '$stateParams', '$cookieStore', 'mainService', '$window', 

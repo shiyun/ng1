@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="myApp" manifest="app.manifest">
+<!-- <html ng-app="myApp" manifest="/app.manifest"> -->
+<html ng-app="myApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>ng1</title>
@@ -8,11 +9,11 @@
     <script src="/js/libs.min.js"></script>
     <script src="/js/view.min.js"></script>
     <script src="/main.js"></script>
-    <base href="/" />
+    <base href="/ng" />
 </head>
 
 <body>
     <h1>AngularJS Home Page (Ui-router Demonstration)</h1>
-    <div data-ui-view=""></div>   
+    <div ui-view=""></div>   
 </body>
 </html>
