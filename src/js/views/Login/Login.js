@@ -40,7 +40,7 @@ angular.module('myApp.Login', ['ui.router'])
 									alert('登录失败')
 								}else{
 									alert('登录成功');									
-									location.href = '/ng';
+									$state.go('/ng', {id: 1}); //$stateParams.id 来接收
 								}
 							});
 						}else{
