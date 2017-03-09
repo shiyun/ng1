@@ -1,4 +1,7 @@
-//@import 'antd.less';
+@ie8: \0screen;
+@ie9: ~"\0";
+
+@import 'antd.less';
 //@import 'animate';
 @import 'common';
 @import 'login';
@@ -16,11 +19,7 @@
 @import 'onlineMediate';
 @import 'casePreJudgement';
 @import 'caseBaseInfo';
-
-
-@ie8: \0screen;
-//@ie9: \0;
-
+html, body,[ui-view] {height: 100%;}
 .mainWrap {
 	&:extend(.bgWhite,.pr);margin:20px 20px 124px;min-height:730px;
 }

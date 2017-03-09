@@ -2,18 +2,25 @@ var myApp = angular.module('myApp', [
 		'ui.router',
 		'ngCookies',
 		'LocalStorageModule',
+		'myApp.Login',
 		'myApp.mainPage',
-		'myApp.mainPage.service'
+		'myApp.mainPage.service',
+		'myApp.directive.headerTop'
 	]);
 
 myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider){
 		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 		//$httpProvider.interceptors.push('mainInterceptor');
 
-		$urlRouterProvider.when('', '/ng');
+		$urlRouterProvider.when('', '/ng/login');
 
 		$stateProvider
-			.state("MainPage", {
+			.state("Login", {
+	            url: "/ng/login",
+	            templateUrl: "/js/views/Login/Login.html",
+	            controller: 'LoginCtrl'
+	        })
+	        .state("MainPage", {
 	            url: "/ng",
 	            templateUrl: "/js/views/MainPage/MainPage.html",
 	            controller: 'MainPageCtrl'
@@ -36,11 +43,11 @@ myApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locati
 	        });
 
 	    $locationProvider.html5Mode(true).hashPrefix('!');
-    	$urlRouterProvider.otherwise('/ng');
+    	$urlRouterProvider.otherwise('/ng/login');
 	})
 	.run([
 		'$rootScope', '$state', '$stateParams', '$cookieStore', 'mainService', '$window', 
-		($rootScope, $state, $stateParams, $cookieStore, mainService, $window) => {
+		function($rootScope, $state, $stateParams, $cookieStore, mainService, $window){
 			$rootScope.a = 'test';
 			$rootScope.$on('login', function(event, data){
                 alert(3)

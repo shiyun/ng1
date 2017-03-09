@@ -67,11 +67,19 @@ gulp.task('ng1view', () => {
 	//setTimeout(() => {babelTransform(`view`);}, 500)
 }); 
 
+//图片压缩
+gulp.task('ng1_images', () => {
+	console.log(pathUrl+'src/images/**/*.*');
+	return gulp.src([pathUrl+'src/images/**/*.*'])
+		.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true,svgoPlugins: [{removeViewBox: false}],use: [pngquant()]})))
+		.pipe(gulp.dest(pathUrl+'public/images'))
+});
+
 gulp.task('ng1_watch', ()=>{
 	gulp.watch(pathUrl+'src/less/*.*', ['ng1_less']);
 	gulp.watch(pathUrl+'src/images/**/*.*', ['ng1_images']);
 	gulp.watch(pathUrl+'src/js/**/*.*', ['ng1view']);
-	gulp.watch(pathUrl+'src/main.js', ['ng1view']);
+	//gulp.watch(pathUrl+'src/main.js', ['ng1view']);
 	/*
 	signArr.forEach((file)=>{
 		gulp.watch(pathUrl+'src/js/'+file+'.js', [file]);
@@ -151,15 +159,6 @@ gulp.task('ng1_libs_bak', function(){
 		.pipe(uglify())
 		//.pipe(sourcemaps.write(pathUrl+'public/js/maps'))
 		.pipe(gulp.dest(pathUrl+'public/js'))
-});
-
-
-//图片压缩
-gulp.task('ng1_images', function() {
-	console.log(pathUrl+'src/images/**/*.*');
-	return gulp.src([pathUrl+'src/images/**/*.*'])
-		.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true,svgoPlugins: [{removeViewBox: false}],use: [pngquant()]})))
-		.pipe(gulp.dest(pathUrl+'public/images'))
 });
 
 

@@ -22,7 +22,7 @@ gulp.task('es6', ()=>{
 });
 
 gulp.task('ng1', ()=>{
-	let arr = ['ng1_libs', 'ng1_less', 'ng1view', 'ng1_watch'];
+	let arr = ['ng1_libs', 'ng1_images', 'ng1_less', 'ng1view', 'ng1_watch'];
 	//Array.prototype.push.apply(arr, signArr);
 	gulp.start(arr);
 });
